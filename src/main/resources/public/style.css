@@ -1,0 +1,91 @@
+html {
+    background-color: #0F1D26;
+    color: #D1D1D3;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    display: block;
+    padding: 0.4rem;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+}
+
+form {
+    display: inline-block;
+}
+
+#texte-principal {
+    max-width: 900px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-family: "Roboto", sans-serif;
+    margin-top: 70px;
+}
+
+#fiche-personnage {
+    width: 20%;
+    text-align: left;
+    margin-top: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h1 {
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+}
+
+h2 {
+    margin-bottom: 1.3rem;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: disc inside;
+    /*border: 0.1rem solid #80d0d0;*/
+    font-style: italic;
+}
+
+li :hover {
+    font-style: normal;
+}
+
+.tag-to-earn, .tag-to-loose {
+    font-size: 0.8rem;
+    color: #0F1D26;
+    background-color: #A3B2BF;
+    padding: 0.5rem;
+    border-radius: 30px;
+    white-space: nowrap;
+    margin-left: 0.5rem;
+    font-style: normal;
+}
+
+
+
