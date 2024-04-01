@@ -4,6 +4,7 @@ import core.domain.choice.Choice;
 import core.domain.choice.ChoiceNumber;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface Script {
     List<Choice> choices();

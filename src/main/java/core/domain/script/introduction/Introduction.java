@@ -3,6 +3,7 @@ package core.domain.script.introduction;
 import core.domain.choice.Choice;
 import core.domain.choice.ChoiceNumber;
 import core.domain.FunctionalException;
+import core.domain.script.ChanceOfSuccess;
 import core.domain.script.Script;
 import core.domain.script.Tag;
 
@@ -20,9 +21,16 @@ public class Introduction implements Script {
     @Override
     public List<Choice> choices() {
         return List.of(
-                new Choice(ChoiceNumber.CHOICE_1, "Les rudiments de la survie en milieu dangereux", Tag.SPECIALISTE_SURVIE),
-                new Choice(ChoiceNumber.CHOICE_2, "La préparation et l'exécution d'attaque surprise", Tag.SPECIALISTE_EMBUSCADE),
-                new Choice(ChoiceNumber.CHOICE_3, "Le combat rapproché au marteau", Tag.SPECIALISTE_COMBAT_MARTEAU));
+                new Choice.Builder(ChoiceNumber.CHOICE_1, "Les rudiments de la survie en milieu dangereux")
+                        .tagToEarn(Tag.SPECIALISTE_SURVIE)
+                        .build(),
+                new Choice.Builder(ChoiceNumber.CHOICE_2,  "La préparation et l'exécution d'attaque surprise")
+                        .tagToEarn(Tag.SPECIALISTE_EMBUSCADE)
+                        .build(),
+                new Choice.Builder(ChoiceNumber.CHOICE_3,  "Le combat rapproché au marteau")
+                        .tagToEarn(Tag.SPECIALISTE_COMBAT_MARTEAU)
+                        .build()
+        );
     }
 
     @Override

@@ -35,11 +35,12 @@ public class ChoicesHtml implements HtmlFragment {
                     <form action="/" method="POST">
                         <input type="hidden" name="run_id" value="%s" />
                         <input type="hidden" name="choice_number" value="%s" />
-                        <button type="submit">%s %s %s</button>
+                        <button type="submit">%s %s %s %s</button>
                     </form>
                 </li>
                 """.formatted(run.runId().id(), choice.number, choice.content,
+                choice.chanceOfSuccess.map(c -> new ChanceOfSuccessHtml(c).render()).orElse(""),
                 choice.tagToEarn.map(t -> new TagToEarn(t).render()).orElse(""),
-                choice.tagToLoose.map(t -> new TagToLoose(t).render()).orElse(""));
+                choice.tagToLose.map(t -> new TagToLoose(t).render()).orElse(""));
     }
 }

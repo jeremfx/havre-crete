@@ -14,6 +14,6 @@ public class TagToEarn implements HtmlFragment{
     public String render() {
         return """
                 <span class="tag-to-earn">%s</span>
-               """.formatted(tagToEarn);
+               """.formatted(tagToEarn.name);
     }
 }

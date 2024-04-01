@@ -3,34 +3,32 @@ package core.domain.script.introduction;
 import core.domain.FunctionalException;
 import core.domain.choice.Choice;
 import core.domain.choice.ChoiceNumber;
+import core.domain.script.ChanceOfSuccess;
 import core.domain.script.Script;
 import core.domain.script.Tag;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlanVsDrones implements Script {
-
-    private final List<Tag> tags;
-
-    public PlanVsDrones(List<Tag> tags) {
-        this.tags = tags;
-    }
+public record PlanVsDrones(List<Tag> tags) implements Script {
 
     @Override
     public List<Choice> choices() {
         return List.of(
-                new Choice(ChoiceNumber.CHOICE_1, "Rejoindre la position de Freyva, " +
-                        "il est trop dangereux de laisser le reste du groupe derrière. Si les drones viennent jusqu’ici nous les combattrons !"),
-                new Choice(ChoiceNumber.CHOICE_2, "Rejoindre la position de Eirix, " +
-                        "la présence des drones aussi loin de l’enclave est inquiétante il faut en savoir plus et si nécessaire les intercepter."));
+                new Choice.Builder(ChoiceNumber.CHOICE_1, "Rejoindre la position de Freyva, " +
+                        "il est trop dangereux de laisser le reste du groupe derrière. Si les drones viennent jusqu’ici nous les combattrons !")
+                        .build(),
+                new Choice.Builder(ChoiceNumber.CHOICE_2, "Rejoindre la position de Eirix, " +
+                        "la présence des drones aussi loin de l’enclave est inquiétante il faut en savoir plus et si nécessaire les intercepter.")
+                        .build()
+        );
     }
 
 
     @Override
     public Script choose(ChoiceNumber choice) {
-        return switch(choice){
-            case CHOICE_1, CHOICE_2 -> new Introduction();
+        return switch (choice) {
+            case CHOICE_1, CHOICE_2 -> new WaitForDrones(tags);
             case CHOICE_3, CHOICE_4 -> throw new FunctionalException("Choice not allowed");
         };
     }
@@ -47,12 +45,7 @@ public class PlanVsDrones implements Script {
     }
 
     @Override
-    public List<Tag> tags() {
-        return tags;
-    }
-
-    @Override
     public String title() {
-        return "";
+        return "Forêt de brume-épine, 6h30";
     }
 }

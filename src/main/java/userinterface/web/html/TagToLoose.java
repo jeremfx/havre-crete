@@ -13,6 +13,6 @@ public class TagToLoose implements HtmlFragment{
     public String render() {
         return """
                 <span class="tag-to-loose">%s</span>
-               """.formatted(tagToLoose);
+               """.formatted(tagToLoose.name);
     }
 }

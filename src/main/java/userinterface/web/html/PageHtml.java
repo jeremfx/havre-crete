@@ -28,7 +28,7 @@ public class PageHtml implements HtmlFragment {
                     <h2>%s</h2>
                     %s
                     %s
-                </section>   
+                </section>
                 </body>
                 </html>
                 """.formatted(runDto.scriptTitle(), runDto.content(), new ChoicesHtml(runDto).render());

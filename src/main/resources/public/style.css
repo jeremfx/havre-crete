@@ -1,6 +1,6 @@
 html {
-    background-color: #0F1D26;
-    color: #D1D1D3;
+    background-color: #143340;
+    color: #F2F2F2;
 }
 
 body {
@@ -13,17 +13,17 @@ button {
     border: none;
     outline: none;
     box-shadow: none;
-    width: 100%;
-    display: block;
-    padding: 0.4rem;
     cursor: pointer;
     color: inherit;
     font: inherit;
     text-align: left;
+    display: inline-block;
+    max-width: 90%;
+    vertical-align: top;
 }
 
 form {
-    display: inline-block;
+    display: inline;
 }
 
 #texte-principal {
@@ -63,13 +63,14 @@ h2 {
 }
 
 ul {
+    margin-top: 2em;
     padding-left: 0;
 }
 
 li {
     list-style: disc inside;
-    /*border: 0.1rem solid #80d0d0;*/
     font-style: italic;
+    margin-bottom: 1em;
 }
 
 li :hover {
@@ -78,8 +79,8 @@ li :hover {
 
 .tag-to-earn, .tag-to-loose {
     font-size: 0.8rem;
-    color: #0F1D26;
-    background-color: #A3B2BF;
+    color: #143340;
+    background-color: #45A9BF;
     padding: 0.5rem;
     border-radius: 30px;
     white-space: nowrap;
@@ -87,5 +88,28 @@ li :hover {
     font-style: normal;
 }
 
+.chance-of-success-high {
+    font-size: 1rem;
+    color: #6B8E23;
+    white-space: nowrap;
+    margin-left: 0.5rem;
+    font-style: normal;
+}
+
+.chance-of-success-medium {
+    font-size: 1rem;
+    color: #F2CF8D;
+    white-space: nowrap;
+    margin-left: 0.5rem;
+    font-style: normal;
+}
+
+.chance-of-success-low {
+    font-size: 1rem;
+    color: #CB6D51;
+    white-space: nowrap;
+    margin-left: 0.5rem;
+    font-style: normal;
+}
 
 
